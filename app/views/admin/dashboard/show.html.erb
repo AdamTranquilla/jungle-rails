@@ -5,10 +5,14 @@
 
 <div class="well">
 
-  <h3>Products: <%= @products.size %> </h3>
-  <h3>Categories: <%= @categories.size %></h3>
-  <h3><%= link_to '/admin/products', class: 'btn btn-default' do %>
+  <h3>Products: <%= @products.size %>
+  <%= link_to '/admin/products', class: 'btn btn-default pull-right' do %>
     Admin Products &raquo;
+  <% end %>
+  </h3>
+  <h3>Categories: <%= @categories.size %>
+  <%= link_to '/admin/categories', class: 'btn btn-default pull-right' do %>
+    Admin categories &raquo;
   <% end %>
   </h3>
 
