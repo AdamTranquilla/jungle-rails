@@ -86,25 +86,25 @@ RSpec.describe User, type: :model do
     end
 
     it 'Warning on save when email exists in db' do
-      @user_1 = User.create(
+      @user = User.create(
         first_name: 'Bob',
         last_name: 'Builder',
         email: 'bobthebuilder@gmail.com',
         password: 'abcdefgh',
         password_confirmation: 'abcdefgh'
       )
-      @user_1.save!
+      @user.save!
 
-      @user_2 = User.create(
+      @user_copy = User.create(
         first_name: 'George',
         last_name: 'Curious',
         email: 'bobthebuilder@gmail.com',
         password: 'bananana',
         password_confirmation: 'bananana'
       )
-      @user_2.save
+      @user_copy.save
 
-      expect(@user_2.errors.full_messages).to include("Email already exists in database")
+      expect(@user_copy.errors.full_messages).to include("Email has already been taken")
     end
 
     it 'Warning on save when password < than 8 char' do
@@ -159,14 +159,14 @@ RSpec.describe User, type: :model do
 
     it 'authenticates with email whitespace' do
       @user = User.create(
-        first_name: 'Bob',
-        last_name: 'Builder',
-        email: 'bobthebuilder@gmail.com',
-        password: 'abcdefgh',
-        password_confirmation: 'abcdefgh'
+        first_name: 'George',
+        last_name: 'Curious',
+        email: 'curiousgeorge@gmail.com',
+        password: 'bananana',
+        password_confirmation: 'bananana'
       )
-
-      expect(User.authenticate_with_credentials(' bobthebuilder@gmail.com ', 'abcdefgh')).to be_truthy
+      @test_user = User.authenticate_with_credentials('  curiousgeorge@gmail.com  ', 'bananana')
+      expect(@user).to eq(@test_user)
     end
 
     it 'authenticates case insensitive emails' do
