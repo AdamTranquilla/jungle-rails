@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
+RSpec.feature "ProductDetails", type: :feature, js: true do
 
   # SETUP (initialize fake DB)
   before :each do
@@ -17,14 +17,14 @@ RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
     end
   end
 
-  scenario "They see all products" do
+  scenario "They nav from home to products where they see all products" do
     # ACT
     visit root_path
-
+    first('.product > header > a').click
     # DEBUG
-    save_screenshot
-
+    
     # VERIFY
     expect(page).to have_css 'article.product', count: 10
+    save_screenshot
   end
 end
