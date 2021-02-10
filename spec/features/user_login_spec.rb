@@ -21,6 +21,6 @@ RSpec.feature "User can Login with existing user info", type: :feature, js: true
     find('input[type="submit"]').click 
 
     expect(page).to have_current_path('/')
-    expect(page).to have_content 'Signed in as Curious '
+    expect(page).to have_content 'Logout'
   end
 end
