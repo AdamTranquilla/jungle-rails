@@ -35,6 +35,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'stripe'
 gem 'faker'
+gem "letter_opener", :group => :development
 
 group :test do
   gem 'capybara'
