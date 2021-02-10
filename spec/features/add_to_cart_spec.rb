@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "ProductDetails", type: :feature, js: true do
+RSpec.feature "Visitor adds one item to cart", type: :feature, js: true do
 
   # SETUP (initialize fake DB)
   before :each do
@@ -17,14 +17,14 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     end
   end
 
-  scenario "They nav from home to products where they see all products" do
+  scenario "They see cart quantity update" do
     # ACT
     visit root_path
-    first('.product > header > a').click
+    first('.product > footer > form').click
     # DEBUG
+    save_screenshot
     
     # VERIFY
-    expect(page).to have_css 'article.product', count: 10
-    # save_screenshot
+    expect(page).to have_content 'My Cart (1)'
   end
 end
