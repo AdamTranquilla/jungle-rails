@@ -22,7 +22,7 @@ RSpec.feature "Visitor adds one item to cart", type: :feature, js: true do
     visit root_path
     first('.product > footer > form').click
     # DEBUG
-    save_screenshot
+    # save_screenshot
     
     # VERIFY
     expect(page).to have_content 'My Cart (1)'
