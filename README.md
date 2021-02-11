@@ -4,7 +4,7 @@ Jungle is a mini e-commerce application built with Rails 4.2. The project's goal
 
 ## Fixes/Tickets
 * Bug fixes (currency format consistency, cart and order details content missing)
-* Additional Functionality (Sold-out badge, Admin security, Admin privileges, User login authentication, Seasonal sales)
+* Additional Functionality (Sold-out badge, Admin security, Admin privileges, User login authentication)
 * Rspec testing with Capybara and Poltergeist (User login, User paths from home to checkout, admin paths to change content)
 
 ## Stack
