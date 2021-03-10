@@ -12,12 +12,17 @@ Jungle is a mini e-commerce application built with Rails 4.2. The project's goal
 * Back-End: Ruby on Rails, PSQL
 * Testing: Rspec, Capybara, Poltergiest
 
-## Screenshots
+## Product page were users can add items to cart
 !["Home"](https://github.com/AdamTranquilla/jungle-rails/blob/master/app/assets/images/Jungle-home.png?raw=true)
+## The product page can be filtered via a category dropdown
 !["Logged in and Filtered Categories"](https://github.com/AdamTranquilla/jungle-rails/blob/master/app/assets/images/Jungle-loggedin-categoryfiltered.png?raw=true)
+## Products can also be selected to view more details
 !["Poduct Details"](https://github.com/AdamTranquilla/jungle-rails/blob/master/app/assets/images/Jungle-product-details.png?raw=true)
+## Once items are added to the cart, users can checkout with stripe
 !["Stripe"](https://github.com/AdamTranquilla/jungle-rails/blob/master/app/assets/images/Jungle-stripe-cart.png?raw=true)
+## After placing an order users can see there order details and alos recieve a receipt on there email
 !["Order Details"](https://github.com/AdamTranquilla/jungle-rails/blob/master/app/assets/images/Jungle-order-details.png?raw=true)
+## Admins can login and edit listings and item categories
 !["Admin Functionality After Authentication"](https://github.com/AdamTranquilla/jungle-rails/blob/master/app/assets/images/Jungle-adminfunc-afterlogin.png?raw=true)
 
 ## Setup
